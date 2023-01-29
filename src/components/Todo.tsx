@@ -1,7 +1,13 @@
-export default function Todo() {
+import { useProcessAuth } from "../hooks/useProcessAuth";
+
+export const Todo: React.FC = () => {
+  const { logout } =useProcessAuth()
+
   return (
-    <>
-      Todo
-    </>
+    <div
+      onClick={logout}
+    >
+      Logout
+    </div>
   );
 }
