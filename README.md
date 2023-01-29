@@ -20,7 +20,7 @@ npm install tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
 
-Edit tailwinc.config.js like below.
+Edit tailwind.config.js like below.
 
 ```
 module.exports = {
