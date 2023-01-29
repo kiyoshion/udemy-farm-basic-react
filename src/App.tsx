@@ -3,6 +3,9 @@ import { useEffect } from 'react';
 import { CsrfToken } from './types/types';
 import { useAppSelector } from './app/hooks';
 import { selectCsrfState } from './slices/appSlice';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Auth from './components/Auth';
+import Todo from './components/Todo';
 
 function App() {
   const csrf = useAppSelector(selectCsrfState)
@@ -18,9 +21,16 @@ function App() {
   }, [csrf])
 
   return (
-    <div>
-
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Auth />
+        </Route>
+        <Route exact path="/todo">
+          <Todo />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
